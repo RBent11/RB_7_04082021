@@ -1,4 +1,4 @@
-const sqlite3 = require('sqlite3');
+const sqlite3 = require('sqlite3').verbose();
 const dbname = './db/main.db';
 // const dbname = ':memory:';
 const uniqid = require('uniqid');
@@ -11,10 +11,29 @@ let db = new sqlite3.Database(dbname, err => {
     console.log('Database démarrée')
 });
 
+//email varchar(120) UNIQUE
 
-db.run('CREATE TABLE IF NOT EXISTS users(id varchar(50), last_name varchar(50), first_name varchar(50), email varchar(120), password varchar(255))');
+db.run(`CREATE TABLE IF NOT EXISTS users(
+    id varchar(50) primary key, 
+    last_name varchar(50), 
+    first_name varchar(50), 
+    email varchar(120), 
+    password varchar(255)
+    )`);
 
-db.run('CREATE TABLE IF NOT EXISTS post(id varchar(50), title varchar(255), content varchar(255), attachment varchar(255), like boolean, dislike boolean)');
+db.run(`CREATE TABLE IF NOT EXISTS post(
+    id varchar(50), 
+    userCode varchar(50),
+    title varchar(255), 
+    content varchar(255), 
+    attachment varchar(255), 
+    like integer, 
+    dislike integer,
+    usersLiked array,
+    usersDisliked array,
+    FOREIGN KEY(userCode) REFERENCES users(id)
+    
+    )`);
 
 
 module.exports = db;

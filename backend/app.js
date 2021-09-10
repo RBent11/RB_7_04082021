@@ -13,7 +13,9 @@
  const db = require('./db/db-config');
  const app = express();
 
+ //Routes
  const userRoutes = require('./routes/userRoutes');
+ const postRoutes = require('./routes/postRoutes');
  
  /**
   * Configuration des headers pour autoriser les accès à notre application
@@ -31,11 +33,19 @@
      extended: true
  }));
  app.use(bodyParser.json());
+
+
+
  
  app.use('/images', express.static(path.join(__dirname, 'images')));
  
  app.use('/api', userRoutes);
+
+ app.use('/api/post', postRoutes);
  
+ 
+
+
  
  
  
