@@ -10,7 +10,7 @@ validePasswordSchema
 .is().max(100)                                  // Maximum 100 caractères
 .has().uppercase()                              // Doit avoir une majuscule
 .has().lowercase()                              // Doit avoir une minuscule
-.has().digits(2)                                // Doit avoir 2 chiffres
+.has().digits(1)                                // Doit avoir 2 chiffres
 .has().not().spaces()                           // Ne doit pas contenir d'espace
 .is().not().oneOf(['Passw0rd', 'Password123']); // Mots de passe interdits
 

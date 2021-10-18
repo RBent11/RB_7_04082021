@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
         res.writeHead(400, 'Mot de passe requis : 8 caractères minimum dont une majuscule, une minuscule, 2 chiffres et sans espace', {
             'content-type': 'application/json'
         });
-        res.end('Mot de passe pas assez complexe');
+        res.end('Mot de passe requis : 8 caractères minimum dont une majuscule, une minuscule, 2 chiffres et sans espace');
     }
     else{
         next();

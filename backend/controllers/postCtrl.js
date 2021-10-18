@@ -48,7 +48,7 @@ exports.deletePost = (req, res) => {
 
 exports.getOnePost = (req, res) => {
 
-  db.get(`SELECT * FROM post WHERE id = ?`, req.params.id, (err, data)=>{
+  db.each(`SELECT * FROM post WHERE id = ?`, req.params.id, (err, data)=>{
     if(err){throw err}
     
     console.log(data)
@@ -60,7 +60,7 @@ exports.getOnePost = (req, res) => {
 
 
 exports.getAllPost = (req, res) => {
-  db.all(`SELECT * FROM post`, (err, data) =>{
+  db.each(`SELECT * FROM post`, (err, data) =>{
     if(err){throw err}
 
     console.log(data)

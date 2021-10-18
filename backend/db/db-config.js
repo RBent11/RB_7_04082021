@@ -15,8 +15,8 @@ let db = new sqlite3.Database(dbname, err => {
 
 db.run(`CREATE TABLE IF NOT EXISTS users(
     id varchar(50) primary key, 
-    last_name varchar(50), 
-    first_name varchar(50), 
+    lastName varchar(50), 
+    firstName varchar(50), 
     email varchar(120), 
     password varchar(255)
     )`);
