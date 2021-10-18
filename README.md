@@ -77,10 +77,10 @@ Dans le terminal, toujours dans le dossier front, lancer la commande suivante :
 npm run serve
 ```
 
-Le serveur doit se lancer sur le port 8080
+Le serveur doit se lancer sur le port 3333
 
 Pour y accéder depuis le navigateur, l'adresse est la suivante : 
 
-http://localhost:8080
+http://localhost:3333
 
 ![Chargement front-end](/assets/front.png "Chargement front-end")
