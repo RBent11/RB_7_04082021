@@ -14,8 +14,5 @@ router.get('/', postCtrl.getAllPost);
 
 router.post('/:id/like', postCtrl.likeDislike);
 
-
-
-
 module.exports = router;
 

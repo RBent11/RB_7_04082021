@@ -15,7 +15,7 @@ export default new VueRouter({
         component: Inscription,
         },  
        {
-        path: '/post',
+        path: '/post/',
         component: PostPage,
        }  
    ] 

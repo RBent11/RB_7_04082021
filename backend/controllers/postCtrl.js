@@ -6,7 +6,9 @@ const uniqid = require('uniqid');
 
 exports.createPost = (req, res) => {
 
-    db.run('INSERT INTO post(id, userId, title, content,) VALUES(?,?,?,?)', [
+    
+
+    db.run('INSERT INTO post(id, userCode, title, content) VALUES(?,?,?,?)', [
         uniqid.time(),
         req.body.userId,
         req.body.title,
@@ -60,11 +62,17 @@ exports.getOnePost = (req, res) => {
 
 
 exports.getAllPost = (req, res) => {
-  db.each(`SELECT * FROM post`, (err, data) =>{
-    if(err){throw err}
+  db.all(`SELECT * FROM post`, (err, rows) =>{
+    if(err != null){
+      console.log(err)
+      return res.status(500).json({error : err})
+    }
 
-    console.log(data)
-    res.status(200).json({message : "Tous les post"})
+    
+
+    console.log(rows);
+    res => console.log(res)
+    res.status(200).json({message : "Tous les posts"})
   })
 };
 
