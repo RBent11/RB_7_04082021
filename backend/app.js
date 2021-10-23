@@ -42,15 +42,5 @@
  app.use('/api', userRoutes);
 
  app.use('/api/post', postRoutes);
- 
- 
-
-
- 
- 
- 
- 
- 
- 
- 
+  
  module.exports = app;

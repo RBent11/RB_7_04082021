@@ -6,12 +6,12 @@ const uniqid = require('uniqid');
 
 exports.createPost = (req, res) => {
 
-    db.run('INSERT INTO post(id, userCode, title, content, attachment) VALUES(?,?,?,?,?)', [
+    db.run('INSERT INTO post(id, userId, title, content,) VALUES(?,?,?,?)', [
         uniqid.time(),
         req.body.userId,
         req.body.title,
         req.body.content,
-        req.body.attachment
+        
       ]);
       res.status(201).json({
         message: 'Post créé'
@@ -74,3 +74,4 @@ exports.likeDislike = (req, res) => {
   
 
 };
+
