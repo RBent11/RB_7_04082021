@@ -70,9 +70,9 @@ exports.getAllPost = (req, res) => {
 
     
 
-    console.log(rows);
-    res => console.log(res)
-    res.status(200).json({message : "Tous les posts"})
+    //console.log(rows[0].id)
+    //res => console.log(res)
+    res.status(200).json({rows})
   })
 };
 
